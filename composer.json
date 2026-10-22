@@ -16,7 +16,7 @@
         "Canvas"
     ],
     "license": "GPL-2.0-or-later",
-    "homepage": "https://github.com/Vardot/varbase_ai_answers_base",
+    "homepage": "https://www.drupal.org/project/varbase_ai_answers_base",
     "authors": [
         {
             "name": "Vardot",
@@ -25,8 +25,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/Vardot/varbase_ai_answers_base/issues",
-        "source": "https://github.com/Vardot/varbase_ai_answers_base"
+        "issues": "https://www.drupal.org/project/issues/varbase_ai_answers_base",
+        "source": "https://git.drupalcode.org/project/varbase_ai_answers_base"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
