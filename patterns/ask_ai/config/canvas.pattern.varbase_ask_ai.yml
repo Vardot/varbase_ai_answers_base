@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.ai_answers_answer
+    - canvas.component.block.ai_answers_question
+    - canvas.component.block.ai_answers_sources
+    - canvas.component.sdc.vartheme_bs5.section
+  module:
+    - options
+id: varbase_ask_ai
+label: 'Ask AI (cited answers)'
+component_tree:
+  7a0d7c61-3b7e-4a3e-9f2c-1d2e3f4a5b6c:
+    uuid: 7a0d7c61-3b7e-4a3e-9f2c-1d2e3f4a5b6c
+    component_id: sdc.vartheme_bs5.section
+    component_version: 4171719f53c41b9d
+    inputs:
+      bg_edge2edge: true
+      container_type: container
+      columns: '100'
+      gutter: 'gx-5 gy-5'
+      padding_block_end: pb-5
+      section_header: false
+      section_footer: false
+      aos_once: false
+    label: 'Ask AI'
+  b1e4c2d3-5f6a-4b7c-8d9e-0f1a2b3c4d5e:
+    parent_uuid: 7a0d7c61-3b7e-4a3e-9f2c-1d2e3f4a5b6c
+    slot: col_1
+    uuid: b1e4c2d3-5f6a-4b7c-8d9e-0f1a2b3c4d5e
+    component_id: block.ai_answers_question
+    component_version: e112ef71b463df69
+    inputs:
+      label: 'Ask AI'
+      label_display: visible
+      target: ai-answers-answer-c2f9a2b4-0d47-4e6a-9d2b-5a1e3c7f8b90
+      target_url: ''
+      placeholder: 'Ask a question about this site…'
+      submit_label: Ask
+      suggested_questions: ''
+      keep_question: true
+    label: 'Ask AI question'
+  c2f9a2b4-0d47-4e6a-9d2b-5a1e3c7f8b90:
+    parent_uuid: 7a0d7c61-3b7e-4a3e-9f2c-1d2e3f4a5b6c
+    slot: col_1
+    uuid: c2f9a2b4-0d47-4e6a-9d2b-5a1e3c7f8b90
+    component_id: block.ai_answers_answer
+    component_version: a094ec25546481d2
+    inputs:
+      label: Answer
+      label_display: '0'
+      agent: varbase_ai_answers
+      allow_follow_up: true
+      show_references: false
+      references_label: Sources
+      show_feedback: true
+      empty_message: ''
+      # The Question and Sources blocks target this block by the DOM id derived
+      # from this UUID, so it is fixed here rather than minted per placement.
+      instance_uuid: c2f9a2b4-0d47-4e6a-9d2b-5a1e3c7f8b90
+    label: 'Ask AI answer'
+  d3a5b6c7-8e9f-4a1b-9c2d-3e4f5a6b7c8d:
+    parent_uuid: 7a0d7c61-3b7e-4a3e-9f2c-1d2e3f4a5b6c
+    slot: col_1
+    uuid: d3a5b6c7-8e9f-4a1b-9c2d-3e4f5a6b7c8d
+    component_id: block.ai_answers_sources
+    component_version: 92430e1fd46de22b
+    inputs:
+      label: Sources
+      label_display: '0'
+      target: ai-answers-answer-c2f9a2b4-0d47-4e6a-9d2b-5a1e3c7f8b90
+    label: 'Ask AI sources'

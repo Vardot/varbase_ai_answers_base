@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_search
+id: varbase_ai_answers
+label: 'Varbase Ask AI'
+description: "Answers visitor questions by retrieving and citing content from this site's vector search index."
+system_prompt: "You are the site's assistant. Answer visitor questions using only information retrieved from the site's content search tool.\n\nRules:\n\n- Always search the index before answering; never rely on prior knowledge.\n- Base the answer only on the retrieved content. If the retrieved content does not answer the question, say you don't have that information rather than guessing. Before saying so, check the retrieved content again for the specific fact asked (a duration, a date, a number): if one of the sources states it, answer with it.\n- Keep answers short and factual. Cite sources only inline, next to the claims they support; the numbered references are shown separately, so do not add a closing line that repeats the citations.\n- If a question is ambiguous, ask one brief clarifying question instead of guessing.\n- Reply in the language the visitor wrote their question in, even when the retrieved content is in another language. Translate the facts you use, but keep names of pages, products and people as they appear in the content."
+secured_system_prompt: '[ai_agent:agent_instructions]'
+tools:
+  'ai_search:rag_search': true
+tool_settings:
+  'ai_search:rag_search':
+    return_directly: 0
+    require_usage: 0
+    restrict_multiple_calls: 0
+    multiple_call_error_message: ''
+    description_override: ''
+    progress_message: ''
+    use_artifacts: 0
+orchestration_agent: false
+triage_agent: false
+max_loops: 3
+max_loops_message: ''
+default_information_tools: ''
+tool_usage_limits:
+  'ai_search:rag_search':
+    index:
+      # Forced so the model can never pick another index (a model-chosen
+      # index is a prompt-injection vector). Not hidden: hide_property crashes
+      # ai_agents 1.3 the first time the tool loop touches the property.
+      action: force_value
+      values:
+        - content_vector
+      hide_property: 0
+      not_break: '1'
+exclude_users_role: false
+masquerade_roles: {  }
+structured_output_enabled: false
+structured_output_schema: ''
+hostname_filter_disabled: false
+guardrail_set: ''

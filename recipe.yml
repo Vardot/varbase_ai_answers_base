@@ -1,0 +1,51 @@
+name: 'Varbase AI Answers Base (Ask AI)'
+description: >-
+  Experimental, opt-in pilot of "Ask AI": a public question box that answers
+  in plain language with numbered citations and source cards, grounded only in
+  this site's own content. Applies Varbase AI Search for the
+  vector index, then adds a retrieval agent locked to that index, AI Answers
+  wired to the agent, the permissions, and the Question, Answer and Sources
+  blocks packaged as an "Ask AI" Canvas pattern ready to drop onto any Canvas
+  page. Needs ai_answers enabled with the caches rebuilt before it is applied
+  (see README.md). Treat as experimental while AI Search is alpha and AI
+  Answers is beta.
+type: 'Varbase AI'
+recipes:
+  - varbase_ai_search_base
+install:
+  - ai_agents
+  - ai_answers
+config:
+  # Everything here is new for this feature. Config that already exists on the
+  # site is left as it is rather than treated as a conflict.
+  strict: false
+  actions:
+    # Enable AI Answers for the agent shipped in config/.
+    ai_answers.agents:
+      simpleConfigUpdate:
+        agents:
+          -
+            id: varbase_ai_answers
+            enabled: true
+            llm_provider: ''
+            llm_model: ''
+            reference_view_mode: teaser
+            source_url_field: ''
+            answer_prompt: ''
+            no_answer_message: "I couldn't find anything on this site that answers that. Try rephrasing your question."
+            feedback_enabled: true
+            conversation_ttl: 3600
+            max_history_turns: 4
+    # No classic block placement: every theme Varbase ships renders its pages
+    # through Drupal Canvas, where Block Layout placements never render. The
+    # three blocks ship as the "Ask AI" Canvas pattern in config/. It needs
+    # the canvas.component.block.ai_answers_* entities, which Canvas generates
+    # only outside a recipe apply (its modules_installed hook returns early
+    # while config is syncing), so ai_answers is enabled with drush and the
+    # caches rebuilt before this recipe is applied (see README.md).
+    # The question and feedback endpoints are permission-gated and the module
+    # grants nothing by default. A public question box needs both roles.
+    user.role.anonymous:
+      grantPermission: 'use ai answers'
+    user.role.authenticated:
+      grantPermission: 'use ai answers'

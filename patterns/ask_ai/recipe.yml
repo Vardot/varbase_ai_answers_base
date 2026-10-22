@@ -1,0 +1,6 @@
+name: 'Varbase AI Answers: Ask AI pattern'
+description: >-
+  The Ask AI (cited answers) Canvas pattern: a Vartheme BS5 section holding the Question, Answer and Sources blocks,
+  wired to each other. It is a recipe of its own because it is built from Vartheme BS5 components: applying it on a
+  theme without them stops on validation. Apply it after Varbase AI Answers, on a Vartheme BS5 site.
+type: 'Varbase AI'
