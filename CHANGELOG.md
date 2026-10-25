@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Move the documentation to docs.varbase.vardot.com ([#3633029](https://www.drupal.org/i/3633029)).
+
 ## [1.0.0-alpha1] - 2026-10-24
 ### Added
 - Initialize Varbase AI Answers Base (Ask AI) recipe ([#3632426](https://www.drupal.org/i/3632426)).

@@ -9,10 +9,10 @@ GitHub repository is a mirror and takes no issues or pull requests.
 
 ## Before you start
 
+- **Documentation** lives on the Varbase docs site: [docs.varbase.vardot.com](https://docs.varbase.vardot.com/developers/understanding-varbase/varbase-ai-recipes/varbase-ai-answers-base). Keep `README.md` short and link there; add no `docs/` folder.
 - **`CHANGELOG.md`**: what changed in each release, newest first. Read it before proposing a change.
 - **Issues and merge requests** on drupal.org: the Problem/Motivation, Proposed resolution and the reasoning
   behind recent changes.
-- **`README.md`**: what was checked, what was not, and the known issues.
 - **[Varbase AI Search](https://www.drupal.org/project/varbase_ai_search_base)**: this recipe applies it first, and its
   `content_vector` index is what the agent searches.
 
