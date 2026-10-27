@@ -2,7 +2,7 @@
     "name": "drupal/varbase_ai_answers_base",
     "description": "Ask AI for Varbase: a public question box that answers from the site's own content with numbered citations and source cards, with AI Answers over the Varbase AI Search vector index. Experimental. Opt-in: never applied by default.",
     "type": "drupal-recipe",
-    "version": "1.0.x-dev",
+    "version": "1.0.0-beta1",
     "keywords": [
         "recipe",
         "Varbase recipes",

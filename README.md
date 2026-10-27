@@ -1,7 +1,7 @@
 [![Varbase](https://raw.githubusercontent.com/Vardot/varbase/11.0.x/images/varbase-logo.png)](https://www.drupal.org/project/varbase)
 
 # Varbase AI Answers Base (Ask AI)
-[![Varbase AI Answers Base (Ask AI)](https://img.shields.io/badge/Varbase%20AI%20Answers%20Base%20%28Ask%20AI%29-1.0.0--alpha1-0d6efc?labelColor=001d38&style=flat-square)](https://www.drupal.org/project/varbase_ai_answers_base)
+[![Varbase AI Answers Base (Ask AI)](https://img.shields.io/badge/Varbase%20AI%20Answers%20Base%20%28Ask%20AI%29-1.0.0--beta1-0d6efc?labelColor=001d38&style=flat-square)](https://www.drupal.org/project/varbase_ai_answers_base)
 
 An **opt-in** Drupal recipe that adds "Ask AI" to a Varbase 11 site: a public question box that answers
 in plain language with numbered citations and source cards, grounded only in the site's own content.

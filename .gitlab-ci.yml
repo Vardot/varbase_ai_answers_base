@@ -84,7 +84,7 @@ validate:yaml-lint:
     # Recipes applied before this one, in apply order; en:<module> enables a module.
     BEFORE_RECIPES: "varbase_ai_vdb_mariadb en:ai_answers"
     # Test with the dev line of the sibling recipes, not their last release.
-    EXTRA_PACKAGES: "drupal/varbase_ai_search_base:1.0.x-dev drupal/varbase_ai_vdb_mariadb:1.0.x-dev"
+    EXTRA_PACKAGES: "drupal/varbase_ai_search_base:1.0.x-dev drupal/varbase_ai_vdb_mariadb:1.0.x-dev drupal/varbase_starter:1.0.x-dev"
   artifacts:
     when: on_failure
     paths:
