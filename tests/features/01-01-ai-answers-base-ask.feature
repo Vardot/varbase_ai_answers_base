@@ -4,7 +4,8 @@ Feature: Varbase AI Recipe - AI Answers Base - Ask AI answers from the site's ow
   I want to ask the site a question and get an answer with the pages it comes from
   So that I can trust the answer and read more on the site
 
-  @flaky
+  # Needs a real answer and real vectors for its sources; Echo has neither.
+  @flaky @live-ai
   Scenario: Verify a visitor asks the site a question and gets an answer with its sources
     Given I am an anonymous user
       And I am on the homepage
